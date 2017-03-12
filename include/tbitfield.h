@@ -31,8 +31,8 @@ private:
   TELEM GetMemMask (const int n) const; // битовая маска для бита n       (#О3)
 public:
   TBitField(int len);                // Конструктор                                  (#О1)
-  TBitField(const TBitField &bf);    //    Конструктор копирования                               (#П1)
-  ~TBitField();                      //       деструктор                             (#С)
+  TBitField(const TBitField &bf);    // Конструктор копирования                               (#П1)
+  ~TBitField();                      // деструктор                             (#С)
 
   // доступ к битам
   int GetLength(void) const;      // получить длину поля         (#О)
