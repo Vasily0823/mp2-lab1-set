@@ -238,6 +238,31 @@ TEST(TSet, can_combine_two_sets_of_non_equal_size)
   EXPECT_EQ(expSet, set3);
 }
 
+TEST(TSet, can_combine_three_sets_of_equal_size)//
+{
+	const int size = 6;
+	TSet set1(size), set2(size), set3(size), expSet(size);
+	// set1 = {1, 1, 0, 0, 0, 0}
+	set1.InsElem(0);
+	set1.InsElem(1);
+	// set2 = {0, 0, 1, 0, 1, 0}
+	set2.InsElem(2);
+	set2.InsElem(5);
+	// set3 = {0, 0, 0, 1, 1, 1}
+	set2.InsElem(3);
+	set2.InsElem(4);
+	set2.InsElem(5);
+	// expSet = {1, 1, 1, 1, 1, 1}
+	expSet.InsElem(0);
+	expSet.InsElem(1);
+	expSet.InsElem(2);
+	expSet.InsElem(3);
+	expSet.InsElem(4);
+	expSet.InsElem(5);
+	EXPECT_EQ(expSet, set3 + set2 + set1);
+}
+
+
 TEST(TSet, can_intersect_two_sets_of_equal_size)
 {
   const int size = 5;
